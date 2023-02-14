@@ -21,6 +21,31 @@
   (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
 
 ;;;###autoload
+(defun vd/get-point (symbol &optional arg)
+  "Copy word current SYMBOL belongs.  With additional ARG."
+  (funcall symbol arg)
+  (point)
+  )
+
+;;;###autoload
+(defun vd/copy-thing (begin-of-thing end-of-thing &optional arg)
+  "Copy thing between BEGIN-OF-THING & END-OF-THING into kill ring.
+With optional ARG."
+  (save-excursion
+    (let ((beg (vd/get-point begin-of-thing 1))
+          (end (vd/get-point end-of-thing arg)))
+      (copy-region-as-kill beg end)))
+  )
+
+;;;###autoload
+(defun vd/copy-word (&optional arg)
+  "Copy words at point into KILL-RING.  With optional ARG."
+  (interactive "P")
+  (vd/copy-thing 'backward-word 'forward-word arg)
+  ;;(paste-to-mark arg)
+  )
+
+;;;###autoload
 (defun vd/delete-line ()
   "Delete text from begin to end of line char."
   (interactive)

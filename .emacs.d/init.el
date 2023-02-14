@@ -9,9 +9,6 @@
 ;; Highlight current line.
 (global-hl-line-mode t)
 (set-face-background 'hl-line "gray13")
-(global-display-line-numbers-mode)
-(column-number-mode 1)
-
 
 (setq display-buffer-alist '(("\\`\\*e?shell" display-buffer-below-selected)))
 
@@ -42,7 +39,10 @@
 (require 'company-rcp)
 (require 'treemacs-rcp)
 (require 'org-mode-rcp)
-
+(require 'projectile-rcp)
+(require 'rainbow-rcp)
+(require 'which-key-rcp)
+(require 'paredit-rcp)
 
 (require 'web-mode-rcp)
 
@@ -55,23 +55,6 @@
   :ensure t)
 (load-theme 'darcula t)
 
-(use-package rainbow-delimiters
-  :ensure t
-  :hook prog-mode)
-
-
-(use-package which-key
-  :ensure t
-  :hook prog-mode)
-
-(use-package paredit
-  :ensure t
-  :hook prog-mode)
-
-(use-package projectile
-  :ensure t)
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
