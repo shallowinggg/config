@@ -6,7 +6,7 @@
   :ensure t
   :defer t
   :functions (lsp lsp-deferred lsp-completion-at-point)
-  ;; :custom
+  :custom
   ;; (lsp-completion-enable                  t)
   ;; (lsp-completion-show-detail             t)
   ;; (lsp-completion-show-kind               t)
@@ -27,7 +27,7 @@
   ;; (lsp-idle-delay                         0.5)
   ;; (lsp-imenu-container-name-separator     t)
   ;; (lsp-imenu-show-container-name          t)
-  ;; (lsp-keymap-prefix                      "C-l")
+  (lsp-keymap-prefix                      "C-l")
   ;; (lsp-lens-enable                        t)
   ;; (lsp-log-io                             nil)
   ;; (lsp-modeline-code-actions-enable       t)
