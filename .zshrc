@@ -48,4 +48,6 @@ fi
 # Load everything
 zplug load
  
+export PATH=/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:$PATH
+export LC_CTYPE="zh_CN.utf8"
 
