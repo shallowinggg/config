@@ -67,7 +67,7 @@
          (scala-mode     . lsp-deferred)
          (terraform-mode . lsp-deferred)
          (sql-mode       . lsp-deferred)
-	 (go-mode       . lsp-deferred)
+	 (go-mode        . lsp-deferred)
          ;; (vimrc-mode     . lsp-deferred)
          ;; (yaml-mode      . lsp-deferred)
          ;; (sh-mode        . lsp-deferred)

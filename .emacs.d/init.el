@@ -8,7 +8,7 @@
 
 ;; Highlight current line.
 (global-hl-line-mode t)
-(set-face-background 'hl-line "gray13")
+(set-face-background 'hl-line "gray33")
 
 (setq display-buffer-alist '(("\\`\\*e?shell" display-buffer-below-selected)))
 
@@ -20,6 +20,10 @@
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))
+
+(use-package darcula-theme
+  :ensure t)
+(load-theme 'darcula t)
 
 (add-to-list 'load-path (expand-file-name "recipes/" (file-name-directory load-file-name)))
 
@@ -49,11 +53,9 @@
 (require 'rust-rcp)
 (require 'go-rcp)
 (require 'haskell-rcp)
+(require 'js-rcp)
 (require 'ripgrep-rcp)
 
-(use-package darcula-theme
-  :ensure t)
-(load-theme 'darcula t)
 
 
 (custom-set-variables

@@ -4,6 +4,8 @@
 (eval-when-compile (require 'use-package))
 (use-package org
   :ensure t
+  :init
+  (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode 0)))
 )
 
 (use-package org-duration
@@ -22,6 +24,10 @@
   :hook (org-mode . org-bullets-mode)
   )
 
+(use-package org-modern
+  :ensure t
+  :hook (org-mode . org-modern-mode)
+)
 
 (provide 'org-mode-rcp)
 ;;; Commentary:
